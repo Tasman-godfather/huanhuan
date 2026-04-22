@@ -1,8 +1,9 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "composite": true,
     "lib": ["ES2022"],
-    "noEmit": true,
+    "noEmit": false,
     "types": ["node"]
   },
   "include": ["vite.config.ts"]
