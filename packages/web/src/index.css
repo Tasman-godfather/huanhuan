@@ -1,0 +1,10 @@
+/* Force Ant Carousel to respect parent height */
+.hero-carousel .slick-list,
+.hero-carousel .slick-track,
+.hero-carousel .slick-slide,
+.hero-carousel .slick-slide > div {
+  height: 100% !important;
+}
+.hero-carousel {
+  height: 100% !important;
+}

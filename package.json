@@ -1,0 +1,30 @@
+{
+  "name": "huanhuan",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "start.bat",
+    "dev": "npm run dev:server & npm run dev:web",
+    "stop": "stop.bat",
+    "dev:server": "npm run dev --workspace=packages/server",
+    "dev:web": "npm run dev --workspace=packages/web",
+    "db:setup": "cd packages/server && npx prisma generate && npx prisma db push",
+    "db:seed": "npm run seed --workspace=packages/server",
+    "build:server": "npm run build --workspace=packages/server",
+    "build:web": "npm run build --workspace=packages/web",
+    "test:server": "npm run test --workspace=packages/server",
+    "test:web": "npm run test --workspace=packages/web",
+    "lint": "eslint 'packages/*/src/**/*.{ts,tsx}'",
+    "format": "prettier --write 'packages/*/src/**/*.{ts,tsx,json,css}'"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@typescript-eslint/eslint-plugin": "^8.58.1",
+    "@typescript-eslint/parser": "^8.58.1",
+    "eslint": "^10.2.0",
+    "prettier": "^3.8.2"
+  }
+}
